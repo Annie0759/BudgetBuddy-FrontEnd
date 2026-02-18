@@ -1,7 +1,7 @@
 
   # Finance App
 
-  This is a code bundle for Finance App. The original project is available at https://www.figma.com/design/z5zObLVep2R3X9GM5txype/Finance-App.
+  This is a code bundle for Front End of BudgetBuddy
 
   ## Running the code
 
