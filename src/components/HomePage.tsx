@@ -184,17 +184,6 @@ export function HomePage({ onPlayClick }: HomePageProps) {
       <PixelatedAsteroid delay={15} y={70} size="large" />
       <PixelatedAsteroid delay={20} y={88} size="medium" />
 
-      {/* Pixel Grid Overlay for retro feel */}
-      <div 
-        className="absolute inset-0 opacity-5 pointer-events-none"
-        style={{
-          backgroundImage: `
-            repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.3) 2px, rgba(0,0,0,0.3) 4px),
-            repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.3) 2px, rgba(0,0,0,0.3) 4px)
-          `
-        }}
-      />
-
       {/* Scan line effect for extra retro CRT feel */}
       <motion.div
         className="absolute inset-0 pointer-events-none"
@@ -212,7 +201,7 @@ export function HomePage({ onPlayClick }: HomePageProps) {
       />
 
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen">
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen gap-3">
         {/* Pixelated Title with magical glow */}
         <motion.div
           initial={{ scale: 0, rotate: -10 }}
@@ -223,18 +212,18 @@ export function HomePage({ onPlayClick }: HomePageProps) {
             damping: 15,
             delay: 0.2 
           }}
-          className="text-center mb-16"
+          className="text-center"
         >
           {/* Title with bubbly effect - bigger and closer */}
           <div className="relative">
             <motion.h1 
               className="relative z-10"
               style={{
-                fontSize: '8.5rem',
+                fontSize: '9rem',
                 lineHeight: '0.85',
                 fontFamily: '"Jersey 25", cursive',
                 fontWeight: '400',
-                letterSpacing: '0.08em',
+                letterSpacing: '0.1em',
                 textTransform: 'uppercase',
                 color: '#ffffff',
                 textShadow: `
@@ -312,7 +301,6 @@ export function HomePage({ onPlayClick }: HomePageProps) {
                 fontWeight: '400',
                 letterSpacing: '0.08em',
                 textTransform: 'uppercase',
-                background: 'linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 50%)',
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
                 color: 'transparent',

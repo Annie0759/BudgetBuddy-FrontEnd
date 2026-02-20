@@ -67,6 +67,7 @@ export default function App() {
   };
 
   return (
+
     <div className="min-h-screen bg-[#1a0f2e] overflow-x-hidden">
       {/* Stars Background */}
       <div className="fixed inset-0 z-0">
@@ -116,7 +117,7 @@ export default function App() {
         {/* Desktop Sidebar */}
         <aside className="hidden lg:block w-64 min-h-screen bg-[#2d1b4e] border-r-4 border-[#6b4e91]">
           <div className="p-6">
-            <h1 className="text-[#ffd93d] pixel-font text-sm mb-2">BUDGET QUEST</h1>
+            <h1 className="text-[#ffd93d] pixel-font text-sm mb-2">BUDGET BUDDY</h1>
             <p className="text-[#c7b8ea] text-xs mb-6">Level Up Your Savings!</p>
             
             {/* Coins Display */}
@@ -153,5 +154,6 @@ export default function App() {
         }
       `}</style>
     </div>
+    
   );
 }
