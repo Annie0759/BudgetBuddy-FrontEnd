@@ -17,6 +17,7 @@ interface HomePageProps {
 
 export function HomePage({ onPlayClick }: HomePageProps) {
   return (
+
     <div className="relative w-full h-screen overflow-hidden">
       {/* Original Galaxy Gradient Background - Smooth and Blended */}
       <div 
@@ -25,7 +26,6 @@ export function HomePage({ onPlayClick }: HomePageProps) {
           background: 'linear-gradient(to bottom, #1e1b4b 0%, #3b0764 8%, #6b21a8 16%, #8b5cf6 24%, #d946ef 35%, #f012be 48%, #ff6b35 62%, #fbbf24 78%, #ffb399 90%, #ffb399 100%)'
         }}
       />
-
       {/* Starfield with depth - multiple layers */}
       <div className="absolute inset-0">
         {/* Far away tiny stars */}
@@ -201,9 +201,10 @@ export function HomePage({ onPlayClick }: HomePageProps) {
       />
 
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen gap-3">
-        {/* Pixelated Title with magical glow */}
-        <motion.div
+      <div className="relative z-20 min-h-screen flex items-center justify-center">
+        <div className="flex-col items-center gap-12">
+          {/* Pixelated Title with magical glow */}
+          <motion.div
           initial={{ scale: 0, rotate: -10 }}
           animate={{ scale: 1, rotate: 0 }}
           transition={{ 
@@ -374,11 +375,13 @@ export function HomePage({ onPlayClick }: HomePageProps) {
               </motion.div>
             ))}
           </motion.div>
-        </motion.div>
+          </motion.div>
 
-        {/* Play Button */}
-        <PlayButton onClick={onPlayClick} />
-
+          {/* Play Button */}
+          <div className="flex justify-center mt-8 relative z-30">
+            <PlayButton onClick={onPlayClick} />
+          </div>
+        </div>
         {/* Floating magical particles */}
         <div className="absolute bottom-0 left-0 right-0 flex justify-around pointer-events-none">
           {[...Array(12)].map((_, i) => (

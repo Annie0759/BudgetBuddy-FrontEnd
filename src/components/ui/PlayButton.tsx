@@ -9,7 +9,7 @@ export function PlayButton({ onClick }: PlayButtonProps) {
   return (
     <motion.button
       onClick={onClick}
-      className="relative px-12 py-6 bg-yellow-400 border-8 border-black text-black tracking-widest overflow-hidden"
+      className="relative z-50 px-12 py-6 !bg-yellow-400 border-8 border-black text-black tracking-widest overflow-hidden"
       style={{
         boxShadow: '8px 8px 0px rgba(0,0,0,0.8)',
         imageRendering: 'pixelated',
