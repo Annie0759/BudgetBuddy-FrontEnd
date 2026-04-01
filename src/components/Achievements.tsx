@@ -163,8 +163,8 @@ export function Achievements() {
     <div className="space-y-6">
       {/* Header */}
       <div className="bg-gradient-to-r from-[#ffd93d] via-[#ff6b9d] to-[#a78bfa] p-6 pixel-borders">
-        <h2 className="text-white pixel-font text-lg mb-2">TROPHY ROOM</h2>
-        <p className="text-white text-sm opacity-90">Showcase your achievements!</p>
+        <h2 className="text-[#1a0f2e] pixel-font text-lg mb-2">TROPHY ROOM</h2>
+        <p className="text-[#1a0f2e] text-sm opacity-90">Showcase your achievements!</p>
       </div>
 
       {/* Stats */}

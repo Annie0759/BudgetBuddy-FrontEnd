@@ -21,8 +21,8 @@ export function LeaderBoard({coins, setCoins}: LeaderBoardProps) {
     <div className="space-y-6">
       {/* Header */}
       <div className="bg-gradient-to-r from-[#ffd93d] via-[#ff6b9d] to-[#a78bfa] p-6 pixel-borders">
-        <h2 className="text-white pixel-font text-lg mb-2">LEADER BOARD</h2>
-        <p className="text-white text-sm opacity-90"> Compete your saving skills with friends! </p>
+        <h2 className="text-[#1a0f2e] pixel-font text-lg mb-2">FRIEND GROUP</h2>
+        <p className="text-[#1a0f2e] text-sm opacity-90"> Compete your saving skills with friends! </p>
       </div>
 
       {/* Current Ranking */}

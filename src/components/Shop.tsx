@@ -162,8 +162,8 @@ export function Shop({ coins, setCoins }: ShopProps) {
       <div className="bg-gradient-to-r from-[#ffd93d] to-[#ff6b9d] p-6 pixel-borders">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-white pixel-font text-lg mb-2">ITEM SHOP</h2>
-            <p className="text-white text-sm opacity-90">Spend your coins wisely!</p>
+            <h2 className="text-[#1a0f2e] pixel-font text-lg mb-2">ITEM SHOP</h2>
+            <p className="text-[#1a0f2e] text-sm opacity-90">Spend your coins wisely!</p>
           </div>
           <div className="bg-white/20 px-4 py-3 pixel-borders">
             <div className="flex items-center gap-2">
