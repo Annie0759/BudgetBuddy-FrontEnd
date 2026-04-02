@@ -6,11 +6,12 @@ import { Shop } from './components/Shop';
 import{ LeaderBoard } from './components/LeaderBoard';
 import{HomePage} from './components/HomePage';
 import{LoginPage} from './components/LoginPage';
+import { PixelBuddy } from './components/PixelBuddy';
 
-import { 
-  Gamepad2, 
-  Trophy, 
-  Scroll, 
+import {
+  Gamepad2,
+  Trophy,
+  Scroll,
   ShoppingBag,
   Menu,
   Coins,
@@ -24,6 +25,7 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [coins, setCoins] = useState(1250);
   const [xp, setXp] = useState(3450);
+  const [isSidebarHovered, setIsSidebarHovered] = useState(false);
 
   const navItems = [
     { id: 'dashboard' as View, label: 'Home', icon: Gamepad2 },
@@ -60,8 +62,8 @@ export default function App() {
             : 'bg-[#3d2661] text-white hover:bg-[#4d3671]'
         }`}
       >
-        <Icon className="w-5 h-5" />
-        <span className="text-xs pixel-font">{item.label}</span>
+        <Icon className="w-5 h-5 shrink-0" />
+        <span className={`text-xs pixel-font transition-opacity duration-300 whitespace-nowrap ${!isSidebarHovered ? 'lg:opacity-0 lg:w-0 lg:overflow-hidden' : 'lg:opacity-100'}`}>{item.label}</span>
       </button>
     );
   };
@@ -115,19 +117,33 @@ export default function App() {
 
       <div className="flex relative z-10">
         {/* Desktop Sidebar */}
-        <aside className="hidden lg:block w-64 min-h-screen bg-[#2d1b4e] border-r-4 border-[#6b4e91]">
+        <aside
+          className={`hidden lg:block min-h-screen bg-[#2d1b4e] border-r-4 border-[#6b4e91] transition-all duration-300 ease-in-out ${
+            isSidebarHovered ? 'w-64' : 'w-20'
+          }`}
+          onMouseEnter={() => setIsSidebarHovered(true)}
+          onMouseLeave={() => setIsSidebarHovered(false)}
+        >
           <div className="p-6">
-            <h1 className="text-[#ffd93d] pixel-font text-sm mb-2">BUDGET BUDDY</h1>
-            <p className="text-[#c7b8ea] text-xs mb-6">Level Up Your Savings!</p>
-            
-            {/* Coins Display */}
-            <div className="mb-6 bg-[#3d2661] p-4 pixel-borders">
-              <div className="flex items-center gap-2 mb-2">
-                <Coins className="w-5 h-5 text-[#ffd93d]" />
-                <span className="text-[#ffd93d] pixel-font text-sm">{coins}</span>
+            {isSidebarHovered ? (
+              <>
+                <h1 className="text-[#ffd93d] pixel-font text-sm mb-2">BUDGET BUDDY</h1>
+                <p className="text-[#c7b8ea] text-xs mb-6">Level Up Your Savings!</p>
+
+                {/* Coins Display */}
+                <div className="mb-6 bg-[#3d2661] p-4 pixel-borders">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Coins className="w-5 h-5 text-[#ffd93d]" />
+                    <span className="text-[#ffd93d] pixel-font text-sm">{coins}</span>
+                  </div>
+                  <div className="text-[#c7b8ea] text-xs">Gold Coins</div>
+                </div>
+              </>
+            ) : (
+              <div className="flex justify-center">
+                <PixelBuddy />
               </div>
-              <div className="text-[#c7b8ea] text-xs">Gold Coins</div>
-            </div>
+            )}
 
             <nav className="space-y-3">
               {navItems.map((item) => (
@@ -138,7 +154,7 @@ export default function App() {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 p-4 lg:p-8 relative">
+        <main className="flex-1 p-4 lg:p-8 lg:ml-8 relative">
           {currentView === 'dashboard' && <GameDashboard coins={coins} setCoins={setCoins} xp={xp} setXp={setXp} />}
           {currentView === 'quests' && <QuestBoard coins={coins} setCoins={setCoins} xp={xp} setXp={setXp} />}
           {currentView === 'achievements' && <Achievements />}
