@@ -220,7 +220,7 @@ export function HomePage({ onPlayClick }: HomePageProps) {
             <motion.h1 
               className="relative z-10"
               style={{
-                fontSize: '9rem',
+                fontSize: '10rem',
                 lineHeight: '0.85',
                 fontFamily: '"Jersey 25", cursive',
                 fontWeight: '400',

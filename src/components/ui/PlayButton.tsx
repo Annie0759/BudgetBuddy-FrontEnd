@@ -10,8 +10,8 @@ export function PlayButton({ onClick }: PlayButtonProps) {
       onClick={onClick}
       className="relative z-50 pixel-borders overflow-hidden"
       style={{
-        background: 'linear-gradient(180deg, #ffd93d 0%, #ffb300 100%)',
-        padding: '24px 48px',
+        background: 'linear-gradient(180deg, #f7ff19e0 0%, #e6fb5a 100%)',
+        padding: '22px 32px',
         imageRendering: 'pixelated',
         fontFamily: '"Press Start 2P", cursive',
         fontSize: '1.25rem',

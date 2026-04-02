@@ -19,87 +19,119 @@ export function LoginPage({ onBack,onLoginSuccess }: LoginPageProps) {
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.3 }}
-        className="relative z-10 bg-white/90 p-12 rounded-none border-8 border-black"
+        className="relative z-10 px-16 py-24 rounded-none border-8 border-black"
         style={{
-          boxShadow: '8px 8px 0px rgba(0,0,0,0.8)',
-          imageRendering: 'pixelated'
+          boxShadow: '8px 8px 0px rgba(0, 0, 0, 0.32)',
+          background: 'rgba(255, 255, 255, 0.8)',
+          minHeight: '550px',
+          minWidth: '430px'
         }}
       >
         <button
           onClick={onBack}
           className="absolute top-4 left-4 p-2 hover:bg-black/10 border-4 border-black"
-          style={{ imageRendering: 'pixelated' }}
+          style={{ 
+            imageRendering: 'pixelated',
+            color: 'black'
+          }}
         >
-          <ArrowLeft className="w-6 h-6" />
+          <ArrowLeft className="w-8 h-8" />
         </button>
 
         <h2 
           className="text-center mb-8 tracking-wider"
           style={{
-            fontSize: '2.5rem',
+            fontSize: '3.5rem',
             textShadow: '3px 3px 0px rgba(0,0,0,0.2)',
-            fontFamily: 'monospace'
+            fontFamily: 'monospace',
+            color: 'black',
+            marginTop: '30px'
           }}
         >
           Login
         </h2>
 
-        <div className="space-y-6 min-w-[320px]">
-          <div>
+        <div className="space-y-6 min-w-[300px]" 
+        style={{ 
+          marginTop: '20px' ,
+          display: 'flex', 
+          flexDirection: 'column', 
+          gap: '5px',
+          alignItems: 'center'
+          }}>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
             <label 
               className="block mb-2 tracking-wide"
-              style={{ fontFamily: 'monospace' }}
+              style={{ 
+                 fontFamily: 'monospace',
+                 fontWeight: '500',
+                 color: 'black'
+                }}
             >
               Username
             </label>
             <input
               type="text"
-              className="w-full p-4 border-4 border-black focus:outline-none focus:border-purple-600"
+              className="w-64 p-4 border-4 border-black focus:outline-none focus:border-purple-600"
               style={{
                 imageRendering: 'pixelated',
-                boxShadow: '4px 4px 0px rgba(0,0,0,0.3)',
-                fontFamily: 'monospace'
+                boxShadow: '2px 2px 0px rgba(0,0,0,0.3)',
+                fontFamily: 'monospace',
+                color: 'black'
               }}
               placeholder="Enter username"
             />
           </div>
 
-          <div>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
             <label 
               className="block mb-2 tracking-wide"
-              style={{ fontFamily: 'monospace' }}
+              style={{ 
+                fontFamily: 'monospace' ,
+                color: 'black'
+              }}
             >
               Password
             </label>
             <input
               type="password"
-              className="w-full p-4 border-4 border-black focus:outline-none focus:border-purple-600"
+              className="w-64 p-4 border-4 border-black focus:outline-none focus:border-purple-600"
               style={{
                 imageRendering: 'pixelated',
-                boxShadow: '4px 4px 0px rgba(0,0,0,0.3)',
-                fontFamily: 'monospace'
+                boxShadow: '2px 2px 0px rgba(0,0,0,0.3)',
+                fontFamily: 'monospace',
+                color: 'black'
               }}
               placeholder="Enter password"
             />
           </div>
 
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick = {onLoginSuccess}
-            className="w-full p-4 bg-purple-600 text-white border-4 border-black tracking-wide"
-            style={{
-              boxShadow: '6px 6px 0px rgba(0,0,0,0.8)',
-              imageRendering: 'pixelated',
-              fontFamily: 'monospace'
-            }}
+          <div className='flex justify-center' style={{ marginTop: '25px' }}>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick = {onLoginSuccess}
+              className="w-64 p-4 bg-purple-600 text-white border-4 border-black tracking-wide"
+              style={{
+                background: 'rgb(242, 250, 98)',
+                color: "black",
+                boxShadow: '3px 3px 0px rgba(0,0,0,0.8)',
+                imageRendering: 'pixelated',
+                fontFamily: 'monospace',
+                fontWeight: '700'
+              }}
           >
-            START GAME
-          </motion.button>
+              START GAME
+            </motion.button>
+          </div>
+          
 
           <p 
             className="text-center text-sm tracking-wide"
-            style={{ fontFamily: 'monospace' }}
+            style={{ 
+              fontFamily: 'monospace' ,
+              color: 'black'
+            }}
           >
             New Player? <span className="text-purple-600 cursor-pointer hover:underline">Sign Up</span>
           </p>
